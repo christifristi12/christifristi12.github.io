@@ -1,0 +1,16 @@
+#startscreentext{
+    font-size: 10vw;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+}
+#startscreen {
+    color: white;
+    font-size: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
