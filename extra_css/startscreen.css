@@ -1,13 +1,80 @@
-#startscreentext{
+.startscreentext {
     font-size: 10vw;
 }
-#startscreentext:hover {
-    background: linear-gradient(135deg, #0052D4 0%, #65C7F7 50%, #9CECFB 100%);
-    background-size: 200%;
+
+.startscreentext:hover {
+    background: repeating-linear-gradient(135deg, #134E5E 0%, #71B280 50%, #134E5E 100%);
+    background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: 2s;
+    animation: animation-gradient-start 2.5s linear infinite;
+    cursor: pointer;
+    color: black;
+}
+
+.wrapper {
+
+}
+.wrapper span:nth-child(1),
+.wrapper span:nth-child(2),
+.wrapper span:nth-child(3),
+.wrapper span:nth-child(4),
+.wrapper span:nth-child(5),
+.wrapper span:nth-child(6) {
+    position: absolute;
+    top: 250px;
+    left: 276px;
+}
+.wrapper span:nth-child(1) {
+    /*display: none;*/
+    clip-path: polygon(-10% 0, 10% 0%,60% 100%, -10% 100%);
+    animation: crack1 0.2s linear forwards;
+}
+.wrapper span:nth-child(2) {
+    clip-path: polygon(10% 0, 40% 0, 80% 100%, 60% 100%);
+    /*clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);*/
+    /*clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);*/
+}
+
+
+.wrapper span:nth-child(3) {
+    /*display: none;*/
+    clip-path: polygon(40% 0, 110% 0, 110% 100%, 80% 100%);
+    animation: crack2 0.2s linear forwards;
+}
+.wrapper span:nth-child(4) {
+    clip-path: polygon(90% 0, 110% 0, 110% 100%, 40% 100%);
+    animation: crack2 0.2s linear forwards;
+}
+
+.wrapper span:nth-child(5) {
+    clip-path: polygon(60% 0, 90% 0, 40% 100%, 20% 100%);
+}
+
+.wrapper span:nth-child(6) {
+    clip-path: polygon(-10% 0, 60% 0, 20% 100%, -10% 100%);
+    animation: crack1 0.2s linear forwards;
+
+}
+
+@keyframes crack1 {
+    0% {transform: translate(0 ,0)}
+    100% {transform: translate(-2%, 1%) rotateZ(1deg) ;}
+}
+@keyframes crack2 {
+    0% {transform:translate(0,0)}
+    100% {    transform: translate(2%, -1%) rotateZ(1deg) ;}
+
+}
+
+@keyframes animation-gradient-start {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 200% 50%;
+    }
 }
 body{
     display: flex;
@@ -25,4 +92,7 @@ body{
 }
 .invisible {
     display: none;
+}
+.visible {
+    display: block;
 }
