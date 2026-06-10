@@ -2,15 +2,19 @@
     font-size: 10vw;
 }
 
-.startscreentext:hover {
-    background: repeating-linear-gradient(135deg, #134E5E 0%, #71B280 50%, #134E5E 100%);
+.wrapper:hover .startscreentext {
+    background: repeating-linear-gradient(
+            135deg,
+            #134E5E 0%,
+            #71B280 50%,
+            #134E5E 100%
+    );
     background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animation-gradient-start 2.5s linear infinite;
     cursor: pointer;
-    color: black;
 }
 
 .wrapper {
@@ -27,21 +31,28 @@
     left: 276px;
 }
 .wrapper span:nth-child(1) {
-    /*display: none;*/
     clip-path: polygon(-10% 0, 10% 0%,60% 100%, -10% 100%);
     animation: crack1 0.2s linear forwards;
 }
 .wrapper span:nth-child(2) {
     clip-path: polygon(10% 0, 40% 0, 80% 100%, 60% 100%);
-    /*clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);*/
-    /*clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);*/
 }
 
 
 .wrapper span:nth-child(3) {
-    /*display: none;*/
     clip-path: polygon(40% 0, 110% 0, 110% 100%, 80% 100%);
     animation: crack2 0.2s linear forwards;
+}
+.cracked span:nth-child(1) {
+    animation: crack1 0.5s forwards;
+}
+
+.cracked span:nth-child(2) {
+    animation: crack1 0.5s forwards;
+}
+
+.cracked span:nth-child(3) {
+    animation: crack1 0.5s forwards;
 }
 .wrapper span:nth-child(4) {
     clip-path: polygon(90% 0, 110% 0, 110% 100%, 40% 100%);
@@ -60,11 +71,11 @@
 
 @keyframes crack1 {
     0% {transform: translate(0 ,0)}
-    100% {transform: translate(-2%, 1%) rotateZ(1deg) ;}
+    100% {transform: translate(-5%, 3%) rotateZ(1deg) ;}
 }
 @keyframes crack2 {
     0% {transform:translate(0,0)}
-    100% {    transform: translate(2%, -1%) rotateZ(1deg) ;}
+    100% {    transform: translate(5%, -3%) rotateZ(1deg) ;}
 
 }
 
@@ -76,23 +87,69 @@
         background-position: 200% 50%;
     }
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-content: flex-end;
-}
+
 #startscreen {
-    color: white;
-    font-size: 10vw;
+    position: fixed;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100%;
+    background: #212529;
+    z-index: 9999;
 }
 .invisible {
     display: none;
 }
 .visible {
     display: block;
+}
+body {
+    margin: 0;
+    color: white;
+    background: repeating-linear-gradient(
+            135deg,
+            #134E5E 0%,
+            #71B280 50%,
+            #134E5E 100%
+    );
+    background-size: 300% 300%;
+    animation: animation-gradient-start 10s linear infinite;
+}
+
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(
+            135deg,
+            #111111,
+            #134E5E,
+            #71B280
+    );
+}
+
+.skill-box {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+}
+
+.project-card {
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.card {
+    background: #1e1e1e;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
 }
