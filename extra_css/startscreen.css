@@ -22,10 +22,7 @@
 }
 .wrapper span:nth-child(1),
 .wrapper span:nth-child(2),
-.wrapper span:nth-child(3),
-.wrapper span:nth-child(4),
-.wrapper span:nth-child(5),
-.wrapper span:nth-child(6) {
+.wrapper span:nth-child(3) {
     position: absolute;
     top: 250px;
     left: 276px;
@@ -53,20 +50,6 @@
 
 .cracked span:nth-child(3) {
     animation: crack1 0.5s forwards;
-}
-.wrapper span:nth-child(4) {
-    clip-path: polygon(90% 0, 110% 0, 110% 100%, 40% 100%);
-    animation: crack2 0.2s linear forwards;
-}
-
-.wrapper span:nth-child(5) {
-    clip-path: polygon(60% 0, 90% 0, 40% 100%, 20% 100%);
-}
-
-.wrapper span:nth-child(6) {
-    clip-path: polygon(-10% 0, 60% 0, 20% 100%, -10% 100%);
-    animation: crack1 0.2s linear forwards;
-
 }
 
 @keyframes crack1 {
