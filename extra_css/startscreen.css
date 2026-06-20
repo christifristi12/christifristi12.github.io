@@ -136,6 +136,23 @@ body {
 .skill-box:hover {
     transform: translateY(-10px);
 }
+.skill-box h3 {
+    transition: .3s;
+}
+
+.skill-box:hover h3 {
+    background: repeating-linear-gradient(
+            135deg,
+            #134E5E 0%,
+            #71B280 50%,
+            #134E5E 100%
+    );
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation-gradient-start 10s linear infinite;
+}
 
 .project-card {
     transition: .3s;
